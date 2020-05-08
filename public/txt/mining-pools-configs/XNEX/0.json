@@ -1,0 +1,15 @@
+{
+    "coinbase_tags" : {
+        "Andrew": {
+            "name": "AndrewStone",
+            "link": "www.nextchain.cash"
+        }
+
+    },
+    "payout_addresses" : {
+        "bitcoincash:qzhpwjj64m5v2mmq45j5n0z48jhv5ngkjg2qh950dy": {
+            "name" : "Unknown2",
+            "link" : "Unknown"
+        }
+    }
+}
