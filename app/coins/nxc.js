@@ -7,14 +7,14 @@ var currencyUnits = [
     name:"NXC",
     multiplier:1,
     default:true,
-    values:["", "bch", "BCH"],
+    values:["", "nxc", "NXC"],
     decimalPlaces:8
   },
   {
     type:"native",
     name:"mNXC",
     multiplier:1000,
-    values:["mbch"],
+    values:["mnxc"],
     decimalPlaces:5
   },
   {
@@ -63,13 +63,22 @@ module.exports = {
     "https://raw.githubusercontent.com/blockchain/Blockchain-Known-Pools/master/pools.json"
   ],
   maxBlockSize: 32000000,
-  maxSupply: new Decimal(20999817.31308491), // ref: https://bitcoin.stackexchange.com/a/38998
-  targetBlockTimeSeconds: 600,
+  difficultyAdjustmentBlockOffset: 1008,
+  difficultyAdjustmentBlockCount: 4,
+
+  maxSupplyByNetwork: {
+		"main": new Decimal(20999817.31308491), // ref: https://bitcoin.stackexchange.com/a/38998
+		"test": new Decimal(21000000),
+		"regtest": new Decimal(21000000)
+	},
+  targetBlockTimeSeconds: 60,
+  targetBlockTimeMinutes: 1,
   currencyUnits:currencyUnits,
-  currencyUnitsByName:{"BCH":currencyUnits[0], "mBCH":currencyUnits[1], "bits":currencyUnits[2], "sat":currencyUnits[3]},
+  currencyUnitsByName:{"NXC":currencyUnits[0], "mNXC":currencyUnits[1], "bits":currencyUnits[2], "sat":currencyUnits[3]},
   baseCurrencyUnit:currencyUnits[3],
   defaultCurrencyUnit:currencyUnits[0],
   feeSatoshiPerByteBucketMaxima: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 50, 75, 100, 150],
+    
   genesisBlockHashesByNetwork:{
     "main":    "4db8c91181548fb427e1e8c6faa822ed4586263f0698b1357a8f7ee78004a924",
     "test":    "4db8c91181548fb427e1e8c6faa822ed4586263f0698b1357a8f7ee78004a924",
